@@ -8,7 +8,7 @@ public class LeftPanel extends JPanel {
     private MyCanvas canvas = new MyCanvas();
 
     public LeftPanel(){
-        setLayout(new BorderLayout(10, 10));
+        setLayout(new BorderLayout());
         setBackground(Color.BLACK);
         add(toolPanel);
         add(canvas);

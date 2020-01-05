@@ -1,7 +1,6 @@
 package disarm;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class WhiteBoardFrame extends JFrame {
     private JMenuBar menuBar = makeMenu();
@@ -28,26 +27,30 @@ public class WhiteBoardFrame extends JFrame {
     private JMenuBar makeMenu() {
         JMenuBar menuBar = new JMenuBar();
 
-        JMenu mainMenu = new JMenu("파일");
+        JMenu fileMenu = new JMenu("파일");
         JMenuItem makeNewFileMenuItem = new JMenuItem("새로 만들기");
         JMenuItem openFileMenuItem = new JMenuItem("열기");
         JMenuItem saveFileMenuItem = new JMenuItem("저장");
         JMenuItem saveOtherNameMenuItem = new JMenuItem("다른 이름으로 저장");
         JMenuItem exitMenuItem = new JMenuItem("끝내기");
 
-        mainMenu.add(makeNewFileMenuItem);
-        mainMenu.add(openFileMenuItem);
-        mainMenu.add(saveFileMenuItem);
-        mainMenu.add(saveOtherNameMenuItem);
-        mainMenu.addSeparator();
-        mainMenu.add(exitMenuItem);
+        fileMenu.add(makeNewFileMenuItem);
+        fileMenu.add(openFileMenuItem);
+        fileMenu.add(saveFileMenuItem);
+        fileMenu.add(saveOtherNameMenuItem);
+        fileMenu.addSeparator();
+        fileMenu.add(exitMenuItem);
 
-        JMenu settingMenu = new JMenu("설정");
+        JMenu editMenu = new JMenu("편집");
+        JMenuItem undoMenuItem = new JMenuItem("Undo");
+        JMenuItem redoMenuItem = new JMenuItem("Redo");
 
-        menuBar.add(mainMenu);
-        menuBar.add(settingMenu);
+        editMenu.add(undoMenuItem);
+        editMenu.add(redoMenuItem);
+
+        menuBar.add(fileMenu);
+        menuBar.add(editMenu);
 
         return menuBar;
     }
-
 }
