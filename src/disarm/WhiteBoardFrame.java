@@ -33,6 +33,10 @@ public class WhiteBoardFrame extends JFrame {
         JMenuItem saveFileMenuItem = new JMenuItem("저장");
         JMenuItem saveOtherNameMenuItem = new JMenuItem("다른 이름으로 저장");
         JMenuItem exitMenuItem = new JMenuItem("끝내기");
+        exitMenuItem.addActionListener(e->{
+            if(JOptionPane.showConfirmDialog(this, "종료하시겠습니까?", this.getTitle(), 0) == 0)
+                System.exit(0);
+        });
 
         fileMenu.add(makeNewFileMenuItem);
         fileMenu.add(openFileMenuItem);
